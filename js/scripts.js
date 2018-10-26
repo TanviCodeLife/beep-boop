@@ -53,12 +53,16 @@ $(document).ready(function(){
     var inputNumbInt = parseInt($("#inputNumb").val());
     var userName = $("#name").val();
     console.log(inputNumbInt);
-    var inputRange = generateRangeOfNumbers(inputNumbInt);
-    var finalArray = [];
-    finalArray = checkAllConditions(inputRange, userName);
-    $("#inputString").text(inputRange);
-    $("#outputArray").text(finalArray);
-    $("#result").show();
-
+    if (isNaN(inputNumbInt)){
+      $("#result").show();
+      $("#inputString").text("Not a number," + userName + "! We only play with numbers for now!");
+    } else {
+      var inputRange = generateRangeOfNumbers(inputNumbInt);
+      var finalArray = [];
+      finalArray = checkAllConditions(inputRange, userName);
+      $("#inputString").text(inputRange.join(", "));
+      $("#outputArray").text(finalArray.join(",  "));
+      $("#result").show();
+    }
   });
 });

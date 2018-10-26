@@ -13,12 +13,18 @@ body {
 }
 
 #form1 {
-  margin-left: 5%;
-  margin-right: 5%;
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
-h1, h2{
+h1{
   text-align: center;
+}
+
+h2{
+  text-align: center;
+  color: white;
+  font-weight: 800;
 }
 
 #alignButton{
