@@ -44,25 +44,41 @@ function checkAllConditions(array, uName){
 return arrayToModifyWithStrings;
 }
 
+function reverseOutputArray(outArray){
+  var reverseOutArray = [];
+  reverseOutArray = outArray.reverse();
+  return reverseOutArray;
+}
 
 //user input logic
 $(document).ready(function(){
   $("form#form1").submit(function(event){
     event.preventDefault();
-    //user-input
+    //inputs
     var inputNumbInt = parseInt($("#inputNumb").val());
     var userName = $("#name").val();
-    console.log(inputNumbInt);
+    var outputArrayDirection = parseInt($("input:radio[name=customRadioInline1]:checked").val());
+
+    //outputs using conditions
     if (isNaN(inputNumbInt)){
       $("#result").show();
       $("#inputString").text("Not a number," + userName + "! We only play with numbers for now!");
-    } else {
+    } else if (outputArrayDirection !== 1){
       var inputRange = generateRangeOfNumbers(inputNumbInt);
       var finalArray = [];
       finalArray = checkAllConditions(inputRange, userName);
       $("#inputString").text(inputRange.join(", "));
       $("#outputArray").text(finalArray.join(",  "));
       $("#result").show();
+    } else if (outputArrayDirection === 1){
+      var inputRange = generateRangeOfNumbers(inputNumbInt);
+      var finalArray = [];
+      finalArray = checkAllConditions(inputRange, userName);
+      var finalRevArray = reverseOutputArray(finalArray)
+      $("#inputString").text(inputRange.join(", "));
+      $("#outputArray").text(finalRevArray.join(",  "));
+      $("#result").show();
     }
+
   });
 });
