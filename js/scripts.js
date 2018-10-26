@@ -8,7 +8,7 @@ for(var i = 0; i <= inputInteger; i++){
 }
 
 
-//check condition 1,2 and 3: check all array elements for 1s
+//check condition 1,2 and 3
 function checkAllConditions(array){
   var arrayToModifyWithStrings = array.toString().split(",");
   var length = arrayToModifyWithStrings.length;
@@ -45,7 +45,6 @@ return arrayToModifyWithStrings;
 }
 
 
-
 //user input logic
 $(document).ready(function(){
   $("form#form1").submit(function(event){
@@ -58,6 +57,7 @@ $(document).ready(function(){
     finalArray = checkAllConditions(inputRange);
     $("#inputString").text(inputRange);
     $("#outputArray").text(finalArray);
+    $("#result").show();
 
   });
 });
