@@ -22,25 +22,38 @@ function checkDivisibleByThree(rangeArray){
 
 //check condition 2: check all array elements for 1s
 function checkNumberOne(arrayWithCondition1){
-var length = arrayWithCondition1.length;
-var newArray = arrayWithCondition1.toString().split(",");
-console.log(newArray);
-var splitDigits = [];
-for (var i = 0; i < length; i++){
-  splitDigits[i] = newArray[i].split(""));
-  var lengthDigitsArr = splitDigits[i].length;
-  console.log(splitDigitsInt[i]);
-  for (var j = 0; j < lengthDigitsArr; j++){
-    if (parseInt(splitDigits[j])) === 1){
-      var condition2 = true;
-      var Index = i;
-      console.log(condition2);
-      console.log(Index);
+  var newArray = arrayWithCondition1.toString().split(",");
+  var length = newArray.length;
+  console.log(newArray);
+  debugger;
+  var splitDigits = [];
+  for (var i = 0; i < length; i++){
+    splitDigits = newArray[i].split("");
+    console.log(splitDigits[i]);
+    var lengthDigitsArr = splitDigits.length;
+    var condition2 = false;
+    for (var j = 0; j < lengthDigitsArr; j++){
+      if (parseInt(splitDigits[j]) === 1){
+        console.log(splitDigits[j]);
+        condition2 = true;
+        console.log(condition2);
+        console.log(newArray[i]);
+        console.log(i);
+        newArray[i] = "Boop!"
+        continue;
+      } else if (parseInt(splitDigits[j]) === 0 && condition2 === false){
+        console.log(splitDigits[j]);
+        var condition3 = true;
+        console.log(condition3);
+        console.log(newArray[i]);
+        console.log(i);
+        newArray[i] = "Beep!"
+        continue;
+      }
     }
   }
+  console.log(newArray);
 }
-}
-
 
 
 //user input logic
