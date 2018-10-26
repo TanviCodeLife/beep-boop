@@ -7,53 +7,43 @@ for(var i = 0; i <= inputInteger; i++){
  return numbersArray;
 }
 
-//check condition 1: divisibility by 3
-function checkDivisibleByThree(rangeArray){
-  var arrayResult = [];
-  for(var i = 1; i < rangeArray.length; i++ ){
-    if (rangeArray[i] % 3 === 0){
-      rangeArray[i] = "I'm sorry, Dave. I'm afraid I can't do that."
-    }
-  }
-  console.log(rangeArray);
-  console.log(arrayResult);
-  return arrayResult;
-}
 
-//check condition 2: check all array elements for 1s
-function checkNumberOne(arrayWithCondition1){
-  var newArray = arrayWithCondition1.toString().split(",");
-  var length = newArray.length;
-  console.log(newArray);
-  debugger;
+//check condition 1,2 and 3: check all array elements for 1s
+function checkAllConditions(array){
+  var arrayToModifyWithStrings = array.toString().split(",");
+  var length = arrayToModifyWithStrings.length;
+  console.log(arrayToModifyWithStrings);
   var splitDigits = [];
   for (var i = 0; i < length; i++){
-    splitDigits = newArray[i].split("");
-    console.log(splitDigits[i]);
+    splitDigits = arrayToModifyWithStrings[i].split("");
+    console.log(splitDigits);
     var lengthDigitsArr = splitDigits.length;
+    var condition1 = false;
     var condition2 = false;
+    var condition3 = false;
     for (var j = 0; j < lengthDigitsArr; j++){
-      if (parseInt(splitDigits[j]) === 1){
-        console.log(splitDigits[j]);
+      if (arrayToModifyWithStrings[i] % 3 === 0 && i !== 0){
+        condition1 = true;
+        arrayToModifyWithStrings[i] = "I'm sorry, Dave. I'm afraid I can't do that."
+        continue;
+      } else if (parseInt(splitDigits[j]) === 1 && condition1 === false){
         condition2 = true;
         console.log(condition2);
-        console.log(newArray[i]);
-        console.log(i);
-        newArray[i] = "Boop!"
+        arrayToModifyWithStrings[i] = "Boop!"
         continue;
-      } else if (parseInt(splitDigits[j]) === 0 && condition2 === false){
+      } else if (parseInt(splitDigits[j]) === 0 && condition1 === false && condition2 === false && condition3 === false){
         console.log(splitDigits[j]);
         var condition3 = true;
-        console.log(condition3);
-        console.log(newArray[i]);
-        console.log(i);
-        newArray[i] = "Beep!"
+        arrayToModifyWithStrings[i] = "Beep!"
         continue;
+      } else if (condition1 === false && condition2 === false && condition3 === false){
+        arrayToModifyWithStrings[i] = parseInt(arrayToModifyWithStrings[i]);
       }
     }
   }
-  console.log(newArray);
+return arrayToModifyWithStrings;
 }
+
 
 
 //user input logic
@@ -64,8 +54,10 @@ $(document).ready(function(){
     var inputNumbInt = parseInt($("#inputNumb").val());
     console.log(inputNumbInt);
     var inputRange = generateRangeOfNumbers(inputNumbInt);
-    // console.log(inputRange);
-    checkDivisibleByThree(inputRange);
-   //check for whether number or not
+    var finalArray = [];
+    finalArray = checkAllConditions(inputRange);
+    $("#inputString").text(inputRange);
+    $("#outputArray").text(finalArray);
+
   });
 });
