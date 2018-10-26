@@ -9,7 +9,7 @@ for(var i = 0; i <= inputInteger; i++){
 
 
 //check condition 1,2 and 3
-function checkAllConditions(array){
+function checkAllConditions(array, uName){
   var arrayToModifyWithStrings = array.toString().split(",");
   var length = arrayToModifyWithStrings.length;
   console.log(arrayToModifyWithStrings);
@@ -24,7 +24,7 @@ function checkAllConditions(array){
     for (var j = 0; j < lengthDigitsArr; j++){
       if (arrayToModifyWithStrings[i] % 3 === 0 && i !== 0){
         condition1 = true;
-        arrayToModifyWithStrings[i] = "I'm sorry, Dave. I'm afraid I can't do that."
+        arrayToModifyWithStrings[i] = "I'm sorry, " + uName + ". I'm afraid I can't do that."
         continue;
       } else if (parseInt(splitDigits[j]) === 1 && condition1 === false){
         condition2 = true;
@@ -51,10 +51,11 @@ $(document).ready(function(){
     event.preventDefault();
     //user-input
     var inputNumbInt = parseInt($("#inputNumb").val());
+    var userName = $("#name").val();
     console.log(inputNumbInt);
     var inputRange = generateRangeOfNumbers(inputNumbInt);
     var finalArray = [];
-    finalArray = checkAllConditions(inputRange);
+    finalArray = checkAllConditions(inputRange, userName);
     $("#inputString").text(inputRange);
     $("#outputArray").text(finalArray);
     $("#result").show();
