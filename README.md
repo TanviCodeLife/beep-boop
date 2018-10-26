@@ -14,22 +14,23 @@
 
 ### Specifications
 * _**The program prints all numbers from 0 to user input number.**_
-* _Input Example: user input number_
+* _Input Range: user input number_
 * _Output Example: Range: 0, 1, 2, 3...., user input number_
-* _**The program replaces output numbers that have 0 in them with Beep.**_
-* _Input Examples: 0, 20, 40_
-* _Output Example: ["Beep"]_
-* _**The program replaces output numbers that have 1 in them with Boop. This condition is more important that Spec 2**_
+* _**Most Important Condition: Numbers divisible by 3 are replaced with "I'm sorry, Dave. I'm afraid I can't do that." For user input number = 5**_
+* _Input Range: 0, 1, 2, 3, 4, 5_
+* _Output Example: 0, 1, 2, "I'm sorry, Dave. I'm afraid I can't do that.", 4, 5_
+* _**Second Most Important Condition: Numbers that contain a 1 are replaced (all digits) with "Boop!". For user input number = 5**_
+* _Input Range: 0, 1, 2, 3, 4, 5_
+* _Output Example: 0, "Boop!", 2, "I'm sorry, Dave. I'm afraid I can't do that.", 4, 5_
+* _**Least Important Condition: Numbers that contain a 0 are replaced (all digits) with "Beep!". For user input number = 11**_
+* _Input Range: 0, 1, 2, 3, 4, 5_
+* _Output Example: "Beep!", "Boop!", 2, "I'm sorry, Dave. I'm afraid I can't do that.", 4, 5, "I'm sorry, Dave. I'm afraid I can't do that.", 7, 8, "I'm sorry, Dave. I'm afraid I can't do that.","Boop!", "Boop!"_
+* _**NOTE: Numbers that contain both 1 and 0 are applied with the most important of the conditions i.e replace with "Boop!".**_
 * _Input Example: 10_
-* _Output Example: Boop_
-* _Input Example: 15_
-* _Output Example: Boop_
-* _**The program should return 'false' for years divisible by 100, since those are not leap years.**_
-* _Input Example: 1900_
-* _Output Example: false_
-* _**The program should return 'true' for years divisible by 400, since those are leap years.**_
-* _Input Example: 2000_
-* _Output Example: true_
+* _Output Example: "Boop!"_
+* _**NOTE: Numbers that contain both 0 and divisible by 3 are applied with the most important of the conditions i.e. "I'm sorry, Dave. I'm afraid I can't do that.".**_
+* _Input Example: 30_
+* _Output Example: "I'm sorry, Dave. I'm afraid I can't do that."_
 
 ### Complete setup/installation instructions
 1. _Go to GitHub profile and project @ [TanviCodeLife](https://github.com/TanviCodeLife/beep-boop)_
