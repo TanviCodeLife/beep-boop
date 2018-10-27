@@ -16,21 +16,27 @@
 * _**The program prints all numbers from 0 to user input number.**_
 * _Input Range: user input number_
 * _Output Example: Range: 0, 1, 2, 3...., user input number_
-* _**Most Important Condition: Numbers divisible by 3 are replaced with "I'm sorry, Dave. I'm afraid I can't do that." For user input number = 5**_
+* _**Most Important Condition: Numbers divisible by 3 are replaced with "I'm sorry, UserName. I'm afraid I can't do that." For user input number = 5**_
 * _Input Range: 0, 1, 2, 3, 4, 5_
-* _Output Example: 0, 1, 2, "I'm sorry, Dave. I'm afraid I can't do that.", 4, 5_
+* _Output Example: 0, 1, 2, "I'm sorry, UserName. I'm afraid I can't do that.", 4, 5_
 * _**Second Most Important Condition: Numbers that contain a 1 are replaced (all digits) with "Boop!". For user input number = 5**_
 * _Input Range: 0, 1, 2, 3, 4, 5_
 * _Output Example: 0, "Boop!", 2, "I'm sorry, Dave. I'm afraid I can't do that.", 4, 5_
 * _**Least Important Condition: Numbers that contain a 0 are replaced (all digits) with "Beep!". For user input number = 11**_
 * _Input Range: 0, 1, 2, 3, 4, 5_
-* _Output Example: "Beep!", "Boop!", 2, "I'm sorry, Dave. I'm afraid I can't do that.", 4, 5, "I'm sorry, Dave. I'm afraid I can't do that.", 7, 8, "I'm sorry, Dave. I'm afraid I can't do that.","Boop!", "Boop!"_
+* _Output Example: "Beep!", "Boop!", 2, "I'm sorry, UserName. I'm afraid I can't do that.", 4, 5, "I'm sorry, UserName. I'm afraid I can't do that.", 7, 8, "I'm sorry, UserName. I'm afraid I can't do that.","Boop!", "Boop!"_
+* _**Reverse output option available to User. For user input number = 5**_
+* _Input Range: 0, 1, 2, 3, 4, 5_
+* _Output Example: 5, 4, "I'm sorry, Tanvi. I'm afraid I can't do that.", 2, "Boop!", "Beep!"_
 * _**NOTE: Numbers that contain both 1 and 0 are applied with the most important of the conditions i.e replace with "Boop!".**_
 * _Input Example: 10_
 * _Output Example: "Boop!"_
-* _**NOTE: Numbers that contain both 0 and divisible by 3 are applied with the most important of the conditions i.e. "I'm sorry, Dave. I'm afraid I can't do that.".**_
+* _**NOTE: Numbers that contain both 0 and divisible by 3 are applied with the most important of the conditions i.e. "I'm sorry, UserName. I'm afraid I can't do that.".**_
 * _Input Example: 30_
-* _Output Example: "I'm sorry, Dave. I'm afraid I can't do that."_
+* _Output Example: "I'm sorry, UserName. I'm afraid I can't do that."_
+* _**Edge Condition: Check whether input number qualifies to be a Number".**_
+* _Input Example: "abcdef"_
+* _Output Example: "Not a number, UserName! We only play with numbers for now!."_
 
 ### Complete setup/installation instructions
 1. _Go to GitHub profile and project @ [TanviCodeLife](https://github.com/TanviCodeLife/beep-boop)_
